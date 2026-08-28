@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+<!-- 课程版本 v1.1 · 2026-08-28 · 第二轮全课程深度审查修复 -->
+<!-- 版本历史与修复明细见同目录《计算机网络实战私教课-修复日志.md》 -->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -851,6 +853,7 @@
     <a class="nav-item" data-lesson="29" onclick="showLesson(29)"><span class="nav-num">30</span><span>口述答辩与课程复盘</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="30" onclick="showLesson(30)"><span class="nav-num">✦</span><span>写在后面 · 尾声</span></a>
   </div>
+  <div style="padding:14px 20px; font-size:11px; color:var(--text-faint); border-top:1px solid var(--border); margin-top:8px;">课程版本 v1.1<br>更新于 2026-08-28 · 详见《修复日志》</div>
 </aside>
 
 <!-- ===== MAIN CONTENT ===== -->
@@ -2002,7 +2005,7 @@
     </div>
     <div class="callout warn">
       <div class="label">为什么用广播？</div>
-      <p>在 DHCP 过程中，客户端还没有 IP 地址，无法进行正常的单播通信。所以 Discover 和 Request 都用广播。这也是为什么 DHCP 运行在 UDP 上（UDP 支持广播，TCP 不支持）。</p>
+      <p>在 DHCP 过程中，客户端还没有 IP 地址，无法进行正常的单播通信。所以 Discover 和 Request 都用广播。这也是为什么 DHCP 运行在 UDP 上（UDP 支持广播，TCP 不支持）。端口也值得记：DHCP 服务器监听 UDP <code>67</code>，客户端使用 UDP <code>68</code>——和课时 6 的 DNS 53 一样，是一对典型的 UDP 知名端口。</p>
     </div>
   </div>
 
@@ -2146,7 +2149,10 @@
           <div class="encap-label">偏移 12</div>
           <div class="encap-bar">
             <div class="encap-segment header seg-trans-h" style="flex:4; font-size:11px;">数据偏移<br><small>4</small></div>
-            <div class="encap-segment header seg-trans-h" style="flex:6; font-size:11px;">保留<br><small>6</small></div>
+            <div class="encap-segment header seg-trans-h" style="flex:3; font-size:11px;">保留<br><small>3</small></div>
+            <div class="encap-segment header seg-trans-h" style="flex:1; font-size:10px;">N</div>
+            <div class="encap-segment header seg-trans-h" style="flex:1; font-size:10px;">C</div>
+            <div class="encap-segment header seg-trans-h" style="flex:1; font-size:10px;">E</div>
             <div class="encap-segment header seg-trans-h" style="flex:1; font-size:10px;">U</div>
             <div class="encap-segment header seg-trans-h" style="flex:1; font-size:10px;">A</div>
             <div class="encap-segment header seg-trans-h" style="flex:1; font-size:10px;">P</div>
@@ -2180,6 +2186,7 @@
       <li><code>RST</code> (Reset) — 重置连接，异常关闭</li>
       <li><code>PSH</code> (Push) — 要求接收方立即将数据推送至应用层</li>
       <li><code>URG</code> (Urgent) — 紧急指针字段有效</li>
+      <li><code>NS / CWR / ECE</code>（图中的 N / C / E）— ECN（显式拥塞通知）相关的扩展标志位，本课不展开，知道它们占位即可</li>
     </ul>
     <div class="callout tip">
       <span class="label">关键字段</span>
@@ -2481,6 +2488,7 @@
     </div>
     <p><strong>Python TCP 服务器代码：</strong></p>
     <div class="code-block">
+      <div class="code-header"><span class="code-lang">Python</span><span>TCP 服务器</span></div>
 <pre><span class="kw">import</span> socket
 
 <span class="com"># === TCP 服务器端 ===</span>
@@ -2503,6 +2511,7 @@ server.<span class="fn">close</span>()</pre>
     </div>
     <p><strong>Python TCP 客户端代码：</strong></p>
     <div class="code-block">
+      <div class="code-header"><span class="code-lang">Python</span><span>TCP 客户端</span></div>
 <pre><span class="kw">import</span> socket
 
 <span class="com"># === TCP 客户端 ===</span>
@@ -4667,7 +4676,7 @@ NOT_FOUND = <span class="str">'&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;
       </tr>
     </table>
 
-    <p>IPv6 地址 128 位写成 8 组、每组 4 位十六进制，有两条压缩规则：每组前导零可省；连续全零组可用 <code>::</code> 代替（整个地址只能用一次）。示例中的 <code>2001:db8::8a2e:370:7334</code> 展开后是 <code>2001:0db8:0000:0000:0000:8a2e:0370:7334</code>——数一下正好 8 组，<code>::</code> 补的是中间 3 组零。</p>
+    <p>IPv6 地址 128 位写成 8 组、每组 4 个十六进制数字（即每组 16 位），有两条压缩规则：每组前导零可省；连续全零组可用 <code>::</code> 代替（整个地址只能用一次）。示例中的 <code>2001:db8::8a2e:370:7334</code> 展开后是 <code>2001:0db8:0000:0000:0000:8a2e:0370:7334</code>——数一下正好 8 组，<code>::</code> 补的是中间 3 组零。</p>
 
     <p>为什么 IPv6 普及了三十年还没完成迁移？答案在课时 02 的分层思想里：网络层整体替换需要全球设备同时兼容，成本极高。现实是 IPv4/IPv6 双栈长期共存，国内移动网络已经大规模商用了 IPv6——你手机大概率同时有两个地址。</p>
   </div>
@@ -8480,7 +8489,7 @@ round-trip min/avg/max/stddev = 8.9/9.1/9.3/0.3 ms           ← 延迟 + 抖动
 
     <div class="callout question">
       <span class="label">课后作业</span>
-      <p>制作你的个人版<strong>"网络排障速查卡"</strong>：把 04 节的五个接入侧场景和课时 20 的局域网速查表合并成一张卡片，格式统一为"现象 → 工具 → 步骤 → 修复"，放进笔记首页。以后遇到故障先翻卡片再动手——排障高手和新手的差距，往往就是这张卡。</p>
+      <p>制作你的个人版<strong>"网络排障速查卡"</strong>：把 04 节的五个接入侧场景和课时 20 的测试矩阵与故障速查合并成一张卡片，格式统一为"现象 → 工具 → 步骤 → 修复"，放进笔记首页。以后遇到故障先翻卡片再动手——排障高手和新手的差距，往往就是这张卡。</p>
     </div>
   </div>
 
@@ -9421,7 +9430,7 @@ server.serve_forever()</pre>
 
   <div class="callout question">
     <span class="label">驱动疑问</span>
-    <p>课时 15 你用 <code>ss</code> 看过本机监听的端口——每一个监听端口都是一扇对外开放的门。攻击者怎么找到这些门？怎么用防火墙决定"哪些门开、对谁开"？怎么像攻击者一样扫描（自己的）机器，提前发现暴露面？这一课在 Linux 虚拟机上真刀真枪配一次防火墙。</p>
+    <p>课时 8/10 你用 <code>ss</code> 观察过 TIME_WAIT 与 cwnd——现在换个视角：本机监听的端口，每一个都是一扇对外开放的门。攻击者怎么找到这些门？怎么用防火墙决定"哪些门开、对谁开"？怎么像攻击者一样扫描（自己的）机器，提前发现暴露面？这一课在 Linux 虚拟机上真刀真枪配一次防火墙。</p>
   </div>
 
   <!-- ==================== Section 1 ==================== -->
@@ -9441,7 +9450,7 @@ server.serve_forever()</pre>
         <td><strong>端口扫描</strong></td>
         <td>侦察（先于攻击）</td>
         <td>逐端口试探，摸清目标开了哪些服务</td>
-        <td>课时 8 三次握手、课时 15 用 ss 看端口</td>
+        <td>课时 8 三次握手、课时 8/10 用 ss 看连接状态</td>
       </tr>
       <tr>
         <td><strong>DoS / DDoS</strong></td>
@@ -10064,7 +10073,7 @@ nmap -sT -sV 127.0.0.1 -oN myscan.txt</pre>
 
     <div class="callout tip">
       <span class="label">毕业设计的定位</span>
-      <p>这不是一节新课，是一次<strong>总装</strong>：流程骨架来自课时 16（企业网络仿真），安全零件来自课时 24（密码学）、25（TLS）、26（防火墙与扫描）、27（架构）。建议安排 8–12 小时、分两三天完成——每个环节都值得停下来回头翻旧课，翻旧课本身就是最好的复习。<strong>双轨分工在课时 27 已定</strong>：拓扑与策略类验证交给 Packet Tracer，加密与服务类验证交给 Linux VM，最后拼成一份完整方案。</p>
+      <p>这不是一节新课，是一次<strong>总装</strong>：流程骨架来自课时 16（企业网络仿真），安全零件来自课时 24（密码学）、25（TLS）、26（防火墙与扫描）、27（架构）。建议安排 8–12 小时、分两三天完成——每个环节都值得停下来回头翻旧课，翻旧课本身就是最好的复习。<strong>双轨分工在课时 27 已定</strong>：拓扑与策略类验证交给 Packet Tracer，加密与服务类验证交给 Linux VM，最后拼成一份完整方案。另一件事先说清：<strong>本课是一套全新拓扑</strong>（内网 192.168.10/20/30、DMZ 192.168.100、公网 203.0.113.x），不是课时 16 那张 192.168.1.0/24 VLSM 网的延续——Packet Tracer 请新建文件从零搭建，不要复用课时 16 的工程。</p>
     </div>
   </div>
 
@@ -11123,7 +11132,7 @@ L3SW# show ip route                                   <span class="com">← 核�
   <div class="section">
     <h2 class="section-title"><span class="num">06</span> 课后复盘：把经验炼成速查表</h2>
 
-    <p>课后作业是把整场考试复盘成一张<strong>"常见网络故障速查表"</strong>。骨架如下，前三行是示例，其余留白由你补全——来源优先级：这次考试修对与修错的故障、课时 23 的五个接入侧场景、课时 20 的局域网速查表。</p>
+    <p>课后作业是把整场考试复盘成一张<strong>"常见网络故障速查表"</strong>。骨架如下，前三行是示例，其余留白由你补全——来源优先级：这次考试修对与修错的故障、课时 23 的五个接入侧场景、课时 20 的测试矩阵与故障速查。</p>
 
     <table class="compare-table">
       <tr>
@@ -11230,7 +11239,7 @@ L3SW# show ip route                                   <span class="com">← 核�
 <div class="lesson-page" id="lesson-29">
   <div class="lesson-header">
     <span class="lesson-tag">阶段 8 · 课时 30 / 30 · 核心必修</span>
-    <h1>结业答辩：把三十课讲成一条线<br>课程复盘：看清你走了多远</h1>
+    <h1>口述答辩：把三十课讲成一条线<br>课程复盘：看清你走了多远</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 30 · 综合项目与考核</p>
   </div>
 
@@ -11752,7 +11761,7 @@ L3SW# show ip route                                   <span class="com">← 核�
     <p>课时 30 的复盘表已经替你选好了三条深入路线——网络编程、网络安全、云计算网络，那是"正式的下一站"，课后作业的下一阶段计划也从那里来。这里只补四件更轻的事，做不做都行：</p>
     <p><strong>① 把项目接着迭代</strong>：课时 28 的拓扑还有很大空间——把静态路由换成动态路由协议（课程只讲到 RIP/OSPF/BGP 的定位）、把地址规划迁往 IPv6（课时 12 只开了一扇窗）、给无线网补上企业级准入 802.1X（课程也只建立了认知）。<strong>课程点到为止的地方，就是现成的路标。</strong><br>
     <strong>② 走认证路线</strong>：CCNA 考纲里的 VLAN、路由、NAT、ACL、无线与安全概念你都学过，而且不少地方学得更深——你可是亲手配过、亲手排过障。系统过一遍考纲查漏补缺，顺手拿一张行业认可的凭证。<br>
-    <strong>③ 读一手材料</strong>：课程资源页链接过的每一份 RFC 都是入口。比如讲 TCP 的 RFC 9293——你会惊讶原文比转述好读，也惊讶自己居然读得懂。<br>
+    <strong>③ 读一手材料</strong>：各课正文里链接过的每一份 RFC 都是入口。比如讲 TCP 的 RFC 9293——你会惊讶原文比转述好读，也惊讶自己居然读得懂。<br>
     <strong>④ 保持那个习惯</strong>：遇到"不对劲"就抓个包（记得课时 01 的红线：只抓你自己的流量）。它不挑方向——走哪条路线都用得上。</p>
     <p>不用急。基础打牢之后，上面的一切都只是"再加一层"——这句话的分量，你现在懂了。</p>
   </div>
