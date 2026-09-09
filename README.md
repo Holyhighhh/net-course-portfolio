@@ -87,3 +87,7 @@
 1. 打开 [在线课程](https://holyhighhh.github.io/net-course-portfolio/)，侧边栏可见 9 阶段 30 课时结构与进度体系；
 2. 看 [CHANGELOG.md](CHANGELOG.md) 的版本总览——一张表读懂 25 天的开发与维护史；
 3. 想 verify 修复？对比 [v1.0 与 v1.1 两个 tag 的 diff](../../compare/v1.0...v1.1)，再读 [第二轮审查报告](docs/reviews/round-2-deep-review.md) 的 12 项消单——三者互相印证。
+
+## 许可证
+
+本项目课程内容采用 [CC BY-NC 4.0](LICENSE.txt)（署名-非商业性使用 4.0 国际）许可：允许学习、分享与演绎（须署名），不得用于商业目的。
