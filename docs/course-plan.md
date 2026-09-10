@@ -587,7 +587,7 @@ tcp-msg（一条消息）：
 **课后作业**：用自己的话写一段"一个数据包的旅行"——从浏览器发出到服务器收到，每经过一层做了什么
 
 **参考资料**：
-- Kurose & Ross 第 1.5-1.6 节（协议层次、封装）
+- Kurose & Ross 第 1.5 节（协议层次与封装）
 - RFC 9293 TCP（PDU 命名参考）
 
 ---
@@ -718,7 +718,7 @@ tcp-msg（一条消息）：
 
 **参考资料**：
 - RFC 9110-9114（HTTP 系列标准）
-- Kurose & Ross 第 2.7 节（HTTPS）
+- Kurose & Ross 第 8.6 节（Securing TCP Connections——教材将 HTTPS/TLS 编入安全章）
 
 ---
 
@@ -782,7 +782,7 @@ tcp-msg（一条消息）：
 **课后作业**：查询 5 个不同域名的 DNS 记录，记录它们的 A 记录和 NS 记录
 
 **参考资料**：
-- Kurose & Ross 第 2.5 节
+- Kurose & Ross 第 2.4 节（DNS）
 - Wireshark DNS Lab：https://gaia.cs.umass.edu/kurose_ross/wireshark.php
 
 ---
@@ -854,7 +854,7 @@ tcp-msg（一条消息）：
 **课后作业**：观察自己设备获取 IP 的过程（查看 DHCP 租约信息），记录租约时间
 
 **参考资料**：
-- Kurose & Ross 第 2.5 节（DHCP）、第 2.3-2.4 节（邮件）
+- Kurose & Ross 第 2.3 节（电子邮件）；DHCP 见第 4.3.2 节（IPv4 编址内）
 - Wireshark DHCP Lab：https://gaia.cs.umass.edu/kurose_ross/wireshark.php
 - MailHog 本地邮件测试工具：https://github.com/mailhog/MailHog
 
@@ -1046,7 +1046,7 @@ tcp-msg（一条消息）：
 **课后作业**：在 Linux 虚拟机中用 iperf3 分别在无丢包和 5% 丢包条件下测试吞吐量，对比结果并分析
 
 **参考资料**：
-- Kurose & Ross 第 3.6-3.7 节
+- Kurose & Ross 第 3.5.5 节（流量控制）、第 3.6-3.7 节（拥塞控制）
 - iperf3 文档：https://iperf.fr/
 - Linux `tc` / `netem` 文档
 
@@ -1189,7 +1189,7 @@ while True:
 **课后作业**：为聊天室增加"私聊"功能（用户可以指定接收者发送消息），需要设计消息协议格式
 
 **参考资料**：
-- Kurose & Ross 第 2.7-2.8 节（Socket 编程）
+- Kurose & Ross 第 2.7 节（Socket 编程，2.7.1 UDP / 2.7.2 TCP）
 - Python `socket` 模块文档：https://docs.python.org/3/library/socket.html
 - Wireshark UDP Lab：https://gaia.cs.umass.edu/kurose_ross/wireshark.php
 
@@ -1438,7 +1438,7 @@ while True:
 **课后作业**：在 Packet Tracer 中配置 NAT 后，从内网 PC traceroute 到外网服务器，观察 NAT 对 traceroute 的影响
 
 **参考资料**：
-- Kurose & Ross 第 4.3.4 节（NAT）
+- Kurose & Ross 第 4.3.3 节（NAT）
 - Wireshark NAT/ICMP Lab：https://gaia.cs.umass.edu/kurose_ross/wireshark.php
 
 ---
