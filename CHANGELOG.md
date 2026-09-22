@@ -56,6 +56,8 @@
 
 3 项修复：① 学习状态刷新即丢——重构为 localStorage 持久化 + 存储/派生计算/呈现三层架构，进度条动态计算；② 课时 10 cwnd 图表顶部内容被裁切——补顶部留白；③ 代码块统一加复制按钮、默认折叠、点击展开、刷新复位。经验沉淀：计划新增 2.6.10 交互组件工程约定。
 
+> **勘误（2026-09-22 补记）**：本条目 ③ 所称的**"默认折叠、点击展开、刷新复位"在任何已提交版本的 `index.html` 中都不存在**。取证：`git log -S "折叠" --all -- index.html` 与 `git log -S "max-height" --all -- index.html` 均零命中；v1.0 起各版本的 JS 函数表（showLesson / showLocked / readStatuses / writeStatuses / setStatusEl / refreshProgress / toggleStatus / initStatuses / showToast / toggleSidebar / closeSidebar / copyCode / initCopyButtons 共 13 个）与 CSS 中都没有折叠实现，`.code-block pre` 始终完整展开，唯一的代码块交互是复制按钮。0.x 条目为**回溯重建**（见本文档"修复过程的可追溯性说明"），无法逐字复现当时的文件态：该功能可能曾在未提交的中间态存在后遗失，也可能属回溯记录偏差——本条目尚不能定性为记录错误。此处按"历史条目保留原样"规则**不改写原文**，仅补记取证结论以免后续误引；同期 README 的相应表述已订正（见下方 `docs:` 提交）。
+
 ## 0.4（2026-08-19）· 阶段 4：课时 12–16
 
 **交付**：网络层与路由五课（IPv4/IPv6、IP 协议、路由原理、静态路由、VLSM 与 NAT、企业网络仿真相项）。
