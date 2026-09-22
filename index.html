@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<!-- 课程版本 v1.5 · 2026-09-10 · 阶段编号调整为 1–9；文档重构：README 课程优先改版，开发记录拆分至 docs/development.md -->
+<!-- 课程版本 v1.6 · 2026-09-22 · TCP 头部按 RFC 9293 §3.1 原文订正（保留 4 位 + 8 个控制位，NS 移入注解）；新访客零态残留清除 -->
 <!-- 版本历史与修复明细见同目录 CHANGELOG.md -->
 <head>
 <meta charset="UTF-8">
@@ -755,8 +755,8 @@
 <aside class="sidebar" id="sidebar">
   <div class="sidebar-header">
     <div class="logo">计算机网络实战私教课</div>
-    <div class="progress-text">进度: 3 / 11 课时 · 点击状态图标可手动标记</div>
-    <div class="progress-bar"><div class="progress-fill" style="width:27.3%"></div></div>
+    <div class="progress-text">进度: 0 / 30 课时 · 点击状态图标可手动标记</div>
+    <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
   </div>
 
   <div class="nav-section">
@@ -853,7 +853,7 @@
     <a class="nav-item" data-lesson="29" onclick="showLesson(29)"><span class="nav-num">30</span><span>口述答辩与课程复盘</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="30" onclick="showLesson(30)"><span class="nav-num">✦</span><span>写在后面 · 尾声</span></a>
   </div>
-  <div style="padding:14px 20px; font-size:11px; color:var(--text-faint); border-top:1px solid var(--border); margin-top:8px;">课程版本 v1.5<br>更新于 2026-09-10<br><a href="https://github.com/Holyhighhh/net-course-portfolio" target="_blank" rel="noopener" style="color:var(--text-faint);">GitHub 项目仓库 ↗</a></div>
+  <div style="padding:14px 20px; font-size:11px; color:var(--text-faint); border-top:1px solid var(--border); margin-top:8px;">课程版本 v1.6<br>更新于 2026-09-22<br><a href="https://github.com/Holyhighhh/net-course-portfolio" target="_blank" rel="noopener" style="color:var(--text-faint);">GitHub 项目仓库 ↗</a></div>
 </aside>
 
 <!-- ===== MAIN CONTENT ===== -->
@@ -2149,8 +2149,7 @@
           <div class="encap-label">偏移 12</div>
           <div class="encap-bar">
             <div class="encap-segment header seg-trans-h" style="flex:4; font-size:11px;">数据偏移<br><small>4</small></div>
-            <div class="encap-segment header seg-trans-h" style="flex:3; font-size:11px;">保留<br><small>3</small></div>
-            <div class="encap-segment header seg-trans-h" style="flex:1; font-size:10px;">N</div>
+            <div class="encap-segment header seg-trans-h" style="flex:4; font-size:11px;">保留<br><small>4</small></div>
             <div class="encap-segment header seg-trans-h" style="flex:1; font-size:10px;">C</div>
             <div class="encap-segment header seg-trans-h" style="flex:1; font-size:10px;">E</div>
             <div class="encap-segment header seg-trans-h" style="flex:1; font-size:10px;">U</div>
@@ -2178,7 +2177,7 @@
         </div>
       </div>
     </div>
-    <p><strong>标志位说明</strong>（上图中的 U / A / P / R / S / F）：</p>
+    <p><strong>标志位说明</strong>（上图中的 C / E / U / A / P / R / S / F）：</p>
     <ul>
       <li><code>SYN</code> (Synchronize) — 同步序列号，用于建立连接</li>
       <li><code>ACK</code> (Acknowledge) — 确认号字段有效</li>
@@ -2186,8 +2185,12 @@
       <li><code>RST</code> (Reset) — 重置连接，异常关闭</li>
       <li><code>PSH</code> (Push) — 要求接收方立即将数据推送至应用层</li>
       <li><code>URG</code> (Urgent) — 紧急指针字段有效</li>
-      <li><code>NS / CWR / ECE</code>（图中的 N / C / E）— ECN（显式拥塞通知）相关的扩展标志位，本课不展开，知道它们占位即可</li>
+      <li><code>CWR / ECE</code>（图中的 C / E）— ECN（显式拥塞通知）相关的标志位，定义见 RFC 3168；本课不展开，知道它们占位即可</li>
     </ul>
+    <div class="callout">
+      <span class="label">关于 NS 位</span>
+      <p>有些资料会把 <code>NS</code> 列为 TCP 的"第 9 个标志位"。它不是 <strong>RFC 9293</strong> §3.1 定义的基础控制位，而是 IANA "TCP Header Flags" 注册表中独立注册的一位——源自 RFC 3540 的 ECN-nonce 实验，已被 RFC 8311 废止。本课图示按 RFC 9293 原文，只画 8 个控制位。</p>
+    </div>
     <div class="callout tip">
       <span class="label">关键字段</span>
       <p><strong>序列号</strong>标识该段中第一个数据字节的编号；<strong>确认号</strong>表示期望收到的下一个字节编号。这两个字段是 TCP 可靠传输的基石。<strong>窗口大小</strong>用于流量控制，告知对方本端当前能接收的数据量。</p>

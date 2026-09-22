@@ -12,7 +12,7 @@
 
 | 课程总览 · 9 阶段 30 课时 · 手动标记进度 | TCP 段结构 · 与 RFC 9293 对照 |
 |---|---|
-| ![课程总览：侧边栏九阶段导航与进度体系](docs/images/01-cover.png) | ![TCP 段结构图，含 9 个标志位](docs/images/02-tcp-header.png) |
+| ![课程总览：侧边栏九阶段导航与进度体系](docs/images/01-cover.png) | ![TCP 段结构图（RFC 9293：4 位数据偏移 + 4 位保留 + 8 个控制位）](docs/images/02-tcp-header.png) |
 
 | 三次握手时序图（纯 CSS 绘制） | 数据封装结构图 |
 |---|---|
@@ -55,7 +55,7 @@
 ## 仓库结构
 
 ```
-├── index.html                  # 课程本体（当前版本 v1.5）
+├── index.html                  # 课程本体（当前版本 v1.6）
 ├── CHANGELOG.md                # 版本历史与修复明细
 ├── docs/
 │   ├── course-plan.md          # 课程计划（9 阶段 30 课时 + 图表/质量规范）
@@ -69,7 +69,7 @@
 
 ## 开发与维护
 
-课程内容由 AI 辅助生成，需求设计、技术决策、审查与验收由本人主导。开发分 9 个阶段交付，完结后经两轮全课程审查；每个版本（v1.0 → v1.5）的修复明细、验证方法与 tag 对比见 [CHANGELOG.md](CHANGELOG.md) 与 [docs/development.md](docs/development.md)。
+课程内容由 AI 辅助生成，需求设计、技术决策、审查与验收由本人主导。开发分 9 个阶段交付，完结后经两轮全课程审查；每个版本（v1.0 → v1.6）的修复明细、验证方法与 tag 对比见 [CHANGELOG.md](CHANGELOG.md) 与 [docs/development.md](docs/development.md)。
 
 ## 许可证
 
