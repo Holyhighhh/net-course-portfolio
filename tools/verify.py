@@ -34,6 +34,9 @@ EXPECT_SECTION_DIST = {"0": 6, "1": 8, "2": 8, "30": 5}  # 其余课时为 DEFAU
 DEFAULT_SECTIONS = 7
 EXPECT_FLEX_SUM = 32
 
+# 版本表行：同时兼容纯 `| v1.6 |` 与带 tag 链接的 `| [v1.6](../../tree/v1.6) |`
+VERSION_ROW_RE = re.compile(r"^\|\s*(?:\[)?(v\d+\.\d+)(?:\]\([^)]*\))?\s*\|", re.M)
+
 PASS, FAIL, WARN, SKIP = "PASS", "FAIL", "WARN", "SKIP"
 
 results = []
@@ -218,10 +221,10 @@ def collect_versions():
     out.append(("README 版本区间", _grab(r"每个版本（v\d+\.\d+\s*→\s*(v\d+\.\d+)）", rd)))
     out.append(("CHANGELOG 当前版本", _grab(r"当前版本：\*\*(v\d+\.\d+)\*\*", ch)))
 
-    m = re.findall(r"^\|\s*(v\d+\.\d+)\s*\|", ch, re.M)
+    m = VERSION_ROW_RE.findall(ch)
     out.append(("CHANGELOG 总览末行", m[-1] if m else None))
 
-    m = re.findall(r"^\|\s*(v\d+\.\d+)\s*\|", dv, re.M)
+    m = VERSION_ROW_RE.findall(dv)
     out.append(("development.md 版本表末行", m[-1] if m else None))
     return out
 
