@@ -15,6 +15,7 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -283,6 +284,31 @@ RESIDUE = {
 }
 
 
+def read_at(rel, rev):
+    """读文件内容。rev 为 None 时读工作区；否则用 git show <rev>:<path>。
+
+    历史版本的残留规则必须对着当时的快照验，不能对着工作区验——
+    否则版本号一往前滚（如 v1.5 的规则要求「课程版本 v1.5」），
+    规则本身就会失效，报出的是规则过期而不是内容回归。
+    """
+    if rev is None:
+        p = ROOT / rel
+        return p.read_text(encoding="utf-8") if p.exists() else None
+    try:
+        out = subprocess.run(
+            ["git", "-C", str(ROOT), "show", "%s:%s" % (rev, rel)],
+            capture_output=True, text=True, check=True)
+        return out.stdout
+    except (subprocess.CalledProcessError, FileNotFoundError, OSError):
+        return None
+
+
+def tag_exists(tag):
+    r = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "--verify", "--quiet",
+                        "refs/tags/%s" % tag], capture_output=True)
+    return r.returncode == 0
+
+
 def check_residue(ver):
     if ver == "all":
         keys = [k for k in RESIDUE if k != "all"]
@@ -294,19 +320,23 @@ def check_residue(ver):
             record("R:" + k, "残留检查 %s" % k, FAIL, "未知版本规则（可用：%s）" %
                    ", ".join(sorted(x for x in RESIDUE if x != "all")))
             continue
+        # 有同名 tag 就对着 tag 快照验（历史归档），否则对着工作区验（开发中）
+        rev = k if tag_exists(k) else None
+        src = "tag %s" % k if rev else "工作区"
         bad, good = [], []
         for rel, kw in spec["require"]:
-            p = ROOT / rel
-            if not p.exists() or kw not in p.read_text(encoding="utf-8"):
+            text = read_at(rel, rev)
+            if text is None or kw not in text:
                 bad.append("缺『%s』@%s" % (kw, rel))
             else:
                 good.append(kw)
         for rel, kw in spec["forbid"]:
-            p = ROOT / rel
-            if p.exists() and kw in p.read_text(encoding="utf-8"):
+            text = read_at(rel, rev)
+            if text is not None and kw in text:
                 bad.append("残留『%s』@%s" % (kw, rel))
         record("R:" + k, "残留检查 %s" % k, PASS if not bad else FAIL,
-               "；".join(bad) if bad else "新措辞 %d 项齐备、旧措辞零残留" % len(good))
+               ("[%s] " % src) + ("；".join(bad) if bad
+                                  else "新措辞 %d 项齐备、旧措辞零残留" % len(good)))
 
 
 # ---------------- TCP 头部 flex 求和 ----------------
