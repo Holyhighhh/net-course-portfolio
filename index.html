@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<!-- 课程版本 v1.4 · 2026-09-10 · 教材章节引用对照官方 8E 目录修正 7 处；知识溯源清单见 docs/sources.md -->
+<!-- 课程版本 v1.5 · 2026-09-10 · 阶段编号调整为 1–9；文档重构：README 课程优先改版，开发记录拆分至 docs/development.md -->
 <!-- 版本历史与修复明细见同目录 CHANGELOG.md -->
 <head>
 <meta charset="UTF-8">
@@ -658,7 +658,7 @@
   }
   .vlsm-scale span { text-align: center; }
 
-  /* ===== 交换机端口 / MAC 地址表（阶段 5）===== */
+  /* ===== 交换机端口 / MAC 地址表（阶段 6）===== */
   .switch-diagram { margin: 28px 0; overflow-x: auto; }
   .switch-fixed { width: 640px; margin: 0 auto; }
   .switch-box {
@@ -760,7 +760,7 @@
   </div>
 
   <div class="nav-section">
-    <div class="nav-section-title">阶段 0 · 学习诊断与环境准备</div>
+    <div class="nav-section-title">阶段 1 · 学习诊断与环境准备</div>
     <a class="nav-item active" data-lesson="0" onclick="showLesson(0)">
       <span class="nav-num">01</span>
       <span>我的网络基础在哪里</span>
@@ -769,7 +769,7 @@
   </div>
 
   <div class="nav-section">
-    <div class="nav-section-title">阶段 1 · 网络全景与工具入门</div>
+    <div class="nav-section-title">阶段 2 · 网络全景与工具入门</div>
     <a class="nav-item" data-lesson="1" onclick="showLesson(1)">
       <span class="nav-num">02</span>
       <span>浏览器输入网址后发生了什么</span>
@@ -783,7 +783,7 @@
   </div>
 
   <div class="nav-section">
-    <div class="nav-section-title">阶段 2 · 应用层实战</div>
+    <div class="nav-section-title">阶段 3 · 应用层实战</div>
     <a class="nav-item" data-lesson="3" onclick="showLesson(3)">
       <span class="nav-num">04</span>
       <span>HTTP 协议</span>
@@ -807,7 +807,7 @@
   </div>
 
   <div class="nav-section">
-    <div class="nav-section-title">阶段 3 · 传输层与 Socket 编程</div>
+    <div class="nav-section-title">阶段 4 · 传输层与 Socket 编程</div>
     <a class="nav-item" data-lesson="7" onclick="showLesson(7)"><span class="nav-num">08</span><span>TCP 三次握手与四次挥手</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="8" onclick="showLesson(8)"><span class="nav-num">09</span><span>TCP 可靠传输机制</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="9" onclick="showLesson(9)"><span class="nav-num">10</span><span>TCP 流量控制与拥塞控制</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
@@ -815,7 +815,7 @@
   </div>
 
   <div class="nav-section">
-    <div class="nav-section-title">阶段 4 · 网络层与路由</div>
+    <div class="nav-section-title">阶段 5 · 网络层与路由</div>
     <a class="nav-item" data-lesson="11" onclick="showLesson(11)"><span class="nav-num">12</span><span>IP 协议</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="12" onclick="showLesson(12)"><span class="nav-num">13</span><span>子网划分与 CIDR</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="13" onclick="showLesson(13)"><span class="nav-num">14</span><span>路由原理</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
@@ -824,7 +824,7 @@
   </div>
 
   <div class="nav-section">
-    <div class="nav-section-title">阶段 5 · 链路层与局域网</div>
+    <div class="nav-section-title">阶段 6 · 链路层与局域网</div>
     <a class="nav-item" data-lesson="16" onclick="showLesson(16)"><span class="nav-num">17</span><span>以太网与帧结构</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="17" onclick="showLesson(17)"><span class="nav-num">18</span><span>ARP 协议</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="18" onclick="showLesson(18)"><span class="nav-num">19</span><span>交换机与 VLAN</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
@@ -832,14 +832,14 @@
   </div>
 
   <div class="nav-section">
-    <div class="nav-section-title">阶段 6 · 无线网络与性能排障</div>
+    <div class="nav-section-title">阶段 7 · 无线网络与性能排障</div>
     <a class="nav-item" data-lesson="20" onclick="showLesson(20)"><span class="nav-num">21</span><span>802.11 无线局域网</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="21" onclick="showLesson(21)"><span class="nav-num">22</span><span>无线安全</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="22" onclick="showLesson(22)"><span class="nav-num">23</span><span>网络性能与基础排障</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
   </div>
 
   <div class="nav-section">
-    <div class="nav-section-title">阶段 7 · 网络安全实战</div>
+    <div class="nav-section-title">阶段 8 · 网络安全实战</div>
     <a class="nav-item" data-lesson="23" onclick="showLesson(23)"><span class="nav-num">24</span><span>密码学基础</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="24" onclick="showLesson(24)"><span class="nav-num">25</span><span>TLS 协议</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="25" onclick="showLesson(25)"><span class="nav-num">26</span><span>主机防火墙与授权扫描</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
@@ -847,13 +847,13 @@
   </div>
 
   <div class="nav-section">
-    <div class="nav-section-title">阶段 8 · 综合项目与考核</div>
+    <div class="nav-section-title">阶段 9 · 综合项目与考核</div>
     <a class="nav-item" data-lesson="27" onclick="showLesson(27)"><span class="nav-num">28</span><span>安全网络架构（项目）</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="28" onclick="showLesson(28)"><span class="nav-num">29</span><span>故障定位实战考试</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="29" onclick="showLesson(29)"><span class="nav-num">30</span><span>口述答辩与课程复盘</span><span class="nav-status status-pending" onclick="toggleStatus(event, this)" data-status="pending">○</span></a>
     <a class="nav-item" data-lesson="30" onclick="showLesson(30)"><span class="nav-num">✦</span><span>写在后面 · 尾声</span></a>
   </div>
-  <div style="padding:14px 20px; font-size:11px; color:var(--text-faint); border-top:1px solid var(--border); margin-top:8px;">课程版本 v1.4<br>更新于 2026-09-10<br><a href="https://github.com/Holyhighhh/net-course-portfolio" target="_blank" rel="noopener" style="color:var(--text-faint);">GitHub 项目仓库 ↗</a></div>
+  <div style="padding:14px 20px; font-size:11px; color:var(--text-faint); border-top:1px solid var(--border); margin-top:8px;">课程版本 v1.5<br>更新于 2026-09-10<br><a href="https://github.com/Holyhighhh/net-course-portfolio" target="_blank" rel="noopener" style="color:var(--text-faint);">GitHub 项目仓库 ↗</a></div>
 </aside>
 
 <!-- ===== MAIN CONTENT ===== -->
@@ -862,7 +862,7 @@
 <!-- ██████████████████ 课时 01 ██████████████████ -->
 <div class="lesson-page active" id="lesson-0">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 0 · 课时 01 / 30</span>
+    <span class="lesson-tag">阶段 1 · 课时 01 / 30</span>
     <h1>我的网络基础在哪里？<br>需要准备什么？</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 01</p>
   </div>
@@ -942,13 +942,13 @@
 
     <div class="callout">
       <div class="label">工具 4（可选）：Ubuntu Server 虚拟机 — 安全实验环境</div>
-      <p><strong>用途</strong>：阶段 7 的防火墙、扫描、HTTPS 等安全实验需要 Linux 环境。<br>
+      <p><strong>用途</strong>：阶段 8 的防火墙、扫描、HTTPS 等安全实验需要 Linux 环境。<br>
       <strong>安装</strong>：<br>
       → 安装 VirtualBox（<a href="https://www.virtualbox.org/" style="color:var(--accent);">virtualbox.org</a>）或 VMware<br>
       → 下载 Ubuntu Server 镜像（<a href="https://ubuntu.com/download/server" style="color:var(--accent);">ubuntu.com/download/server</a>）<br>
       → 创建虚拟机，建议分配 2GB 内存 + 20GB 磁盘<br>
       <strong>验证</strong>：虚拟机能启动并登录即成功。<br>
-      <span style="color:var(--text-faint);font-size:12px;">→ 这个不急，阶段 7 之前装好就行</span></p>
+      <span style="color:var(--text-faint);font-size:12px;">→ 这个不急，阶段 8 之前装好就行</span></p>
     </div>
   </div>
 
@@ -1026,7 +1026,7 @@
 <!-- ██████████████████ 课时 02 ██████████████████ -->
 <div class="lesson-page" id="lesson-1">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 1 · 课时 02 / 30</span>
+    <span class="lesson-tag">阶段 2 · 课时 02 / 30</span>
     <h1>当我在浏览器输入网址到看到页面，<br>中间发生了什么？</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 02</p>
   </div>
@@ -1206,7 +1206,7 @@
 <!-- ██████████████████ 课时 03 ██████████████████ -->
 <div class="lesson-page" id="lesson-2">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 1 · 课时 03 / 30</span>
+    <span class="lesson-tag">阶段 2 · 课时 03 / 30</span>
     <h1>为什么网络要分层？<br>数据是怎么一层层包装的？</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 03</p>
   </div>
@@ -1485,7 +1485,7 @@
 <!-- ██████████████████ 课时 04 ██████████████████ -->
 <div class="lesson-page" id="lesson-3">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 2 · 课时 04 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 3 · 课时 04 / 30 · 核心必修</span>
     <h1>浏览器和服务器是怎么对话的？<br>HTTP 协议</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 04</p>
   </div>
@@ -1608,7 +1608,7 @@
       <p>Cookie 有两个重要的安全属性：<br>
       <strong>HttpOnly</strong> — 禁止 JavaScript 访问该 Cookie，防止 XSS 攻击窃取<br>
       <strong>Secure</strong> — 只在 HTTPS 连接中发送该 Cookie<br>
-      这两个属性在阶段 7 网络安全中会深入讨论。</p>
+      这两个属性在阶段 8 网络安全中会深入讨论。</p>
     </div>
   </div>
 
@@ -1674,7 +1674,7 @@
 <!-- ██████████████████ 课时 05 ██████████████████ -->
 <div class="lesson-page" id="lesson-4">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 2 · 课时 05 / 30 · 核心必修 + 扩展选修</span>
+    <span class="lesson-tag">阶段 3 · 课时 05 / 30 · 核心必修 + 扩展选修</span>
     <h1>为什么有些网址是 https，<br>有些是 http？</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 05</p>
   </div>
@@ -1716,7 +1716,7 @@
       <p><strong style="color:var(--accent)">认证（Authentication）</strong> — 通过数字证书验证服务器身份，防止冒充</p>
       <p><strong style="color:var(--cyan)">完整性（Integrity）</strong> — 数据在传输过程中被篡改会被检测到</p>
     </div>
-    <p>TLS 的详细工作原理（握手过程、密码套件、密钥交换）将在<strong>阶段 7 · 课时 25</strong> 深入讲解。本课只需理解：HTTPS 在 HTTP 和 TCP 之间插入了一层 TLS，把 HTTP 的明文加密后再传输。</p>
+    <p>TLS 的详细工作原理（握手过程、密码套件、密钥交换）将在<strong>阶段 8 · 课时 25</strong> 深入讲解。本课只需理解：HTTPS 在 HTTP 和 TCP 之间插入了一层 TLS，把 HTTP 的明文加密后再传输。</p>
     <div class="callout">
       <div class="label">协议栈对比</div>
       <p><strong>HTTP</strong>：应用层 HTTP → 传输层 TCP → 网络层 IP<br>
@@ -1833,7 +1833,7 @@
 <!-- ██████████████████ 课时 06 ██████████████████ -->
 <div class="lesson-page" id="lesson-5">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 2 · 课时 06 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 3 · 课时 06 / 30 · 核心必修</span>
     <h1>域名怎么变成 IP 地址的？<br>DNS</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 06</p>
   </div>
@@ -1924,7 +1924,7 @@
       <p><strong>UDP（端口 53）</strong> — 绝大多数常规查询。DNS 查询/响应通常很小（&lt;512 字节），UDP 的无连接特性使查询更快。</p>
       <p><strong>TCP（端口 53）</strong> — 当响应数据超过 UDP 限制（传统 512 字节，EDNS0 可扩展）时自动切换到 TCP。也用于区域传送（zone transfer，权威服务器之间的同步）。</p>
     </div>
-    <p>这个细节会在阶段 3 传输层课程中再次回顾——届时你将更深入理解 UDP 和 TCP 的区别。</p>
+    <p>这个细节会在阶段 4 传输层课程中再次回顾——届时你将更深入理解 UDP 和 TCP 的区别。</p>
   </div>
 
   <div class="divider"></div>
@@ -1972,7 +1972,7 @@
 <!-- ██████████████████ 课时 07 ██████████████████ -->
 <div class="lesson-page" id="lesson-6">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 2 · 课时 07 / 30 · DHCP 必修 + 邮件选修</span>
+    <span class="lesson-tag">阶段 3 · 课时 07 / 30 · DHCP 必修 + 邮件选修</span>
     <h1>我的 IP 地址是怎么来的？<br>DHCP 与邮件协议</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 07</p>
   </div>
@@ -2082,7 +2082,7 @@
   <div class="section">
     <h2 class="section-title"><span class="num">07</span> 掌握验证标准</h2>
     <div class="checklist">
-      <h3>完成以下验证后，进入阶段 3</h3>
+      <h3>完成以下验证后，进入阶段 4</h3>
       <div class="check-item"><div class="box"></div><span>能画出 DHCP 四步过程（DORA）的时序图</span></div>
       <div class="check-item"><div class="box"></div><span>能在 Wireshark（官方 trace）中识别 DHCP 流量</span></div>
       <div class="check-item"><div class="box"></div><span>能解释 DHCP 为什么使用广播</span></div>
@@ -2096,7 +2096,7 @@
       1. 你画的 DORA 时序图<br>
       2. DHCP 为什么用广播<br>
       3.（选修）SMTP/POP3/IMAP 的职责分工<br>
-      确认通过后，我们进入<strong>阶段 3：传输层与 Socket 编程</strong></p>
+      确认通过后，我们进入<strong>阶段 4：传输层与 Socket 编程</strong></p>
     </div>
   </div>
 
@@ -2109,7 +2109,7 @@
 
 <div class="lesson-page" id="lesson-7">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 3 · 课时 08 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 4 · 课时 08 / 30 · 核心必修</span>
     <h1>TCP 是怎么建立和断开连接的？<br>三次握手与四次挥手</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 08</p>
   </div>
@@ -2589,7 +2589,7 @@ client.<span class="fn">close</span>()
 
 <div class="lesson-page" id="lesson-8">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 3 · 课时 09 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 4 · 课时 09 / 30 · 核心必修</span>
     <h1>为什么下载大文件不会丢数据？<br>TCP 可靠传输机制</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 09</p>
   </div>
@@ -3000,7 +3000,7 @@ tcp.analysis.retransmission <span class="kw">or</span> tcp.analysis.duplicate_ac
 
 <div class="lesson-page" id="lesson-9">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 3 · 课时 10 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 4 · 课时 10 / 30 · 核心必修</span>
     <h1>网络拥塞了怎么办？<br>TCP 流量控制与拥塞控制</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 10</p>
   </div>
@@ -3452,7 +3452,7 @@ cat /proc/sys/net/ipv4/tcp_congestion_control</pre>
 
 <div class="lesson-page" id="lesson-10">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 3 · 课时 11 / 30 · 核心必修 · 阶段项目</span>
+    <span class="lesson-tag">阶段 4 · 课时 11 / 30 · 核心必修 · 阶段项目</span>
     <h1>Socket 编程实战<br>从 Echo 到聊天室</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 11 · 阶段项目</p>
   </div>
@@ -4434,7 +4434,7 @@ NOT_FOUND = <span class="str">'&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;
 <!-- ██████████████████ 课时 12 ██████████████████ -->
 <div class="lesson-page" id="lesson-11">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 4 · 课时 12 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 5 · 课时 12 / 30 · 核心必修</span>
     <h1>IP 协议<br>互联网的寻址系统</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 12 · 网络层与路由</p>
   </div>
@@ -4752,7 +4752,7 @@ NOT_FOUND = <span class="str">'&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;
 <!-- ██████████████████ 课时 13 ██████████████████ -->
 <div class="lesson-page" id="lesson-12">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 4 · 课时 13 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 5 · 课时 13 / 30 · 核心必修</span>
     <h1>子网划分与 CIDR<br>地址管理的算术</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 13 · 网络层与路由</p>
   </div>
@@ -5103,7 +5103,7 @@ PC1&gt; ping 192.168.1.70     ← 再 ping 对端：通 = 跨子网转发正常
 <!-- ██████████████████ 课时 14 ██████████████████ -->
 <div class="lesson-page" id="lesson-13">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 4 · 课时 14 / 30 · 核心必修 · 扩展选修</span>
+    <span class="lesson-tag">阶段 5 · 课时 14 / 30 · 核心必修 · 扩展选修</span>
     <h1>路由原理<br>数据包的导航系统</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 14 · 网络层与路由</p>
   </div>
@@ -5391,7 +5391,7 @@ S* = 默认路由（0.0.0.0/0 会带星标）——03 节讲过的概念；
 <!-- ██████████████████ 课时 15 ██████████████████ -->
 <div class="lesson-page" id="lesson-14">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 4 · 课时 15 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 5 · 课时 15 / 30 · 核心必修</span>
     <h1>NAT 与 ICMP<br>一个公网 IP 的魔术与网络信使</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 15 · 网络层与路由</p>
   </div>
@@ -5647,7 +5647,7 @@ Identifier、Sequence Number 递增，以及 TTL 差值</pre>
 <!-- ==================== 课时 16（lesson-15）阶段项目 ==================== -->
 <div class="lesson-page" id="lesson-15">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 4 · 课时 16 / 30 · 核心必修 · 阶段项目</span>
+    <span class="lesson-tag">阶段 5 · 课时 16 / 30 · 核心必修 · 阶段项目</span>
     <h1>企业网络仿真<br>从一份需求到一个能跑的网络</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 16 · 阶段项目</p>
   </div>
@@ -6025,7 +6025,7 @@ R2# show ip nat translations
   <div class="section">
     <h2 class="section-title"><span class="num">07</span> 掌握验证标准（阶段项目）</h2>
 
-    <p>阶段项目按<strong>综合评分</strong>验收（80 分通过）。逐条自查，全部达成才算完成阶段 4：</p>
+    <p>阶段项目按<strong>综合评分</strong>验收（80 分通过）。逐条自查，全部达成才算完成阶段 5：</p>
 
     <div class="checklist">
       <div class="check-item">
@@ -6056,12 +6056,12 @@ R2# show ip nat translations
 
     <div class="callout question">
       <span class="label">课后作业</span>
-      <p>为 R1 和 R2 再增加一条冗余链路（2911 的四个千兆口已用满，先在物理面板给两台路由器加装 HWIC-2T 模块，用剩余空间里新的 /30 互联），配上浮动静态路由。观察：链路正常时走哪条？断开主链路后路由表怎么变、多久恢复？把前后 <code>show ip route</code> 对比截图记录下来——这是阶段 5 之前对"路由收敛"最好的预习。</p>
+      <p>为 R1 和 R2 再增加一条冗余链路（2911 的四个千兆口已用满，先在物理面板给两台路由器加装 HWIC-2T 模块，用剩余空间里新的 /30 互联），配上浮动静态路由。观察：链路正常时走哪条？断开主链路后路由表怎么变、多久恢复？把前后 <code>show ip route</code> 对比截图记录下来——这是阶段 6 之前对"路由收敛"最好的预习。</p>
     </div>
 
     <div class="callout tip">
-      <span class="label">阶段 4 收官</span>
-      <p>回看这五课的一条主线：IP 地址让每台设备可寻址（12）→ 子网划分让地址用得省、路由表走得准（13）→ 路由让包跨越多个网络（14）→ NAT 让私网共享公网出口、ICMP 让网络可探测（15）→ 本课把它们装配成一个完整系统。你现在已经能从一张白纸交付一个小型企业网络。阶段 5 将下探到链路层：包离开路由器后，在网线里和交换机中发生了什么。</p>
+      <span class="label">阶段 5 收官</span>
+      <p>回看这五课的一条主线：IP 地址让每台设备可寻址（12）→ 子网划分让地址用得省、路由表走得准（13）→ 路由让包跨越多个网络（14）→ NAT 让私网共享公网出口、ICMP 让网络可探测（15）→ 本课把它们装配成一个完整系统。你现在已经能从一张白纸交付一个小型企业网络。阶段 6 将下探到链路层：包离开路由器后，在网线里和交换机中发生了什么。</p>
     </div>
   </div>
 
@@ -6091,7 +6091,7 @@ R2# show ip nat translations
 <!-- ==================== 课时 17（lesson-16）==================== -->
 <div class="lesson-page" id="lesson-16">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 5 · 课时 17 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 6 · 课时 17 / 30 · 核心必修</span>
     <h1>以太网与帧结构<br>数据在网线里的真实长相</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 17 · 链路层与局域网</p>
   </div>
@@ -6299,7 +6299,7 @@ eth.src 对上——不一致？你可能开了随机 MAC（见上）</pre>
       <p><strong>先听后说</strong>（Carrier Sense：线上有信号就等）→ <strong>边说边听</strong>（Collision Detection：发送中检测到冲突立即停止）→ <strong>冲突后退避</strong>（等一个随机倍增的时间再试，避免下次撞车）。最短帧长 64B 的要求正来自这里——帧太短的话，发完了冲突还没传回来，发送方误以为没冲突。</p>
     </div>
 
-    <p>但今天的交换式以太网里，每台设备独享网线到交换机端口（<strong>全双工</strong>），发和收走不同的线对，物理上不可能冲突——CSMA/CD 已基本退场，只剩历史和考试价值。它留下的遗产是<strong>最小帧长 64B</strong> 和填充机制。真正还需要"共享空气避冲突"的是无线网（CSMA/CA，阶段 6 见）。</p>
+    <p>但今天的交换式以太网里，每台设备独享网线到交换机端口（<strong>全双工</strong>），发和收走不同的线对，物理上不可能冲突——CSMA/CD 已基本退场，只剩历史和考试价值。它留下的遗产是<strong>最小帧长 64B</strong> 和填充机制。真正还需要"共享空气避冲突"的是无线网（CSMA/CA，阶段 7 见）。</p>
   </div>
 
   <!-- ==================== Section 6 ==================== -->
@@ -6373,7 +6373,7 @@ eth.src 对上——不一致？你可能开了随机 MAC（见上）</pre>
 <!-- ==================== 课时 18（lesson-17）==================== -->
 <div class="lesson-page" id="lesson-17">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 5 · 课时 18 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 6 · 课时 18 / 30 · 核心必修</span>
     <h1>ARP 协议<br>IP 地址怎么找到 MAC 地址</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 18 · 链路层与局域网</p>
   </div>
@@ -6608,7 +6608,7 @@ opcode 字段区分：1 = request，2 = reply</pre>
 <!-- ==================== 课时 19（lesson-18）==================== -->
 <div class="lesson-page" id="lesson-18">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 5 · 课时 19 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 6 · 课时 19 / 30 · 核心必修</span>
     <h1>交换机与 VLAN<br>一台设备切出的多个局域网</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 19 · 链路层与局域网</p>
   </div>
@@ -6980,14 +6980,14 @@ R1(config-subif)# ip address 192.168.20.1 255.255.255.0
 <!-- ==================== 课时 20（lesson-19）阶段项目 ==================== -->
 <div class="lesson-page" id="lesson-19">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 5 · 课时 20 / 30 · 核心必修 · 阶段项目</span>
+    <span class="lesson-tag">阶段 6 · 课时 20 / 30 · 核心必修 · 阶段项目</span>
     <h1>局域网综合抓包与仿真<br>追踪一个包的完整旅程</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 20 · 阶段项目</p>
   </div>
 
   <div class="callout question">
     <span class="label">驱动疑问</span>
-    <p>阶段 5 的三块积木——以太网帧（17）、ARP（18）、交换机与 VLAN（19）——已经各自练熟。现在把它们拼成一个真实的多部门局域网：两台交换机、两个 VLAN、一台路由器。项目要回答一个终极问题：<strong>一个包从源 PC 到目的 PC，MAC 地址和 IP 地址分别在哪些地方变化、哪些地方不变？</strong>答案必须同时经得起 Packet Tracer 仿真和 Wireshark 真实抓包的检验。</p>
+    <p>阶段 6 的三块积木——以太网帧（17）、ARP（18）、交换机与 VLAN（19）——已经各自练熟。现在把它们拼成一个真实的多部门局域网：两台交换机、两个 VLAN、一台路由器。项目要回答一个终极问题：<strong>一个包从源 PC 到目的 PC，MAC 地址和 IP 地址分别在哪些地方变化、哪些地方不变？</strong>答案必须同时经得起 Packet Tracer 仿真和 Wireshark 真实抓包的检验。</p>
   </div>
 
   <!-- ==================== Section 1 ==================== -->
@@ -7369,12 +7369,12 @@ R1(config-subif)# ip address 192.168.20.1 255.255.255.0
 
     <div class="callout question">
       <span class="label">课后作业</span>
-      <p>如果这个拓扑加上课时 15 的 NAT 出口（R1 再加一个公网口，内网全部 PAT 出去），"MAC 每跳变、IP 不变"还成立吗？分内网段（PC-A → PC-C）和出口段（PC-A → 公网服务器）分别分析，写出两段的逐跳表——完成后你就把阶段 4 和阶段 5 两条主线缝在了一起。</p>
+      <p>如果这个拓扑加上课时 15 的 NAT 出口（R1 再加一个公网口，内网全部 PAT 出去），"MAC 每跳变、IP 不变"还成立吗？分内网段（PC-A → PC-C）和出口段（PC-A → 公网服务器）分别分析，写出两段的逐跳表——完成后你就把阶段 5 和阶段 6 两条主线缝在了一起。</p>
     </div>
 
     <div class="callout tip">
-      <span class="label">阶段 5 收官</span>
-      <p>四课主线回顾：帧是链路层的运输单元（17）→ ARP 打通 IP 与 MAC 两套地址（18）→ 交换机学习转发、VLAN 切分广播域、Trunk 跨设备、路由器缝合 VLAN（19）→ 本课用一个包的完整旅程把一切串起来验证。至此你已经掌握"从应用层到网线"的完整协议栈。阶段 6 下探到无线：没有网线的以太网——802.11 怎么在空气里工作。</p>
+      <span class="label">阶段 6 收官</span>
+      <p>四课主线回顾：帧是链路层的运输单元（17）→ ARP 打通 IP 与 MAC 两套地址（18）→ 交换机学习转发、VLAN 切分广播域、Trunk 跨设备、路由器缝合 VLAN（19）→ 本课用一个包的完整旅程把一切串起来验证。至此你已经掌握"从应用层到网线"的完整协议栈。阶段 7 下探到无线：没有网线的以太网——802.11 怎么在空气里工作。</p>
     </div>
   </div>
 
@@ -7404,7 +7404,7 @@ R1(config-subif)# ip address 192.168.20.1 255.255.255.0
 <!-- ==================== 课时 21（lesson-20）==================== -->
 <div class="lesson-page" id="lesson-20">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 6 · 课时 21 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 7 · 课时 21 / 30 · 核心必修</span>
     <h1>802.11 无线局域网<br>数据在空气里怎么跑</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 21 · 无线网络与性能排障</p>
   </div>
@@ -7897,7 +7897,7 @@ R1(config-subif)# ip address 192.168.20.1 255.255.255.0
 <!-- ==================== 课时 22（lesson-21）==================== -->
 <div class="lesson-page" id="lesson-21">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 6 · 课时 22 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 7 · 课时 22 / 30 · 核心必修</span>
     <h1>无线安全<br>输完密码之后发生了什么</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 22 · 无线网络与性能排障</p>
   </div>
@@ -7967,7 +7967,7 @@ R1(config-subif)# ip address 192.168.20.1 255.255.255.0
       </tr>
     </table>
 
-    <p>演进主线一句话：<strong>WEP 死于"算法和密钥管理都错了"，WPA 是止血绷带，WPA2 换掉了算法（AES），WPA3 换掉了认证方式（SAE）</strong>。表里的加密名词（RC4、AES、CCMP、GCMP）在阶段 7 课时 24 会系统拆解——本课先把演进主线和密钥协商的流程焊牢，算法细节到时回头对照。</p>
+    <p>演进主线一句话：<strong>WEP 死于"算法和密钥管理都错了"，WPA 是止血绷带，WPA2 换掉了算法（AES），WPA3 换掉了认证方式（SAE）</strong>。表里的加密名词（RC4、AES、CCMP、GCMP）在阶段 8 课时 24 会系统拆解——本课先把演进主线和密钥协商的流程焊牢，算法细节到时回头对照。</p>
 
     <div class="callout tip">
       <span class="label">家用 PSK 和企业 802.1X 的本质区别</span>
@@ -8174,7 +8174,7 @@ SSID 在派生中当"盐"：同一密码 + 不同 SSID = 完全不同的 PMK</pr
 <!-- ==================== 课时 23（lesson-22）==================== -->
 <div class="lesson-page" id="lesson-22">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 6 · 课时 23 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 7 · 课时 23 / 30 · 核心必修</span>
     <h1>网络性能与基础排障<br>慢在哪里，坏在哪段</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 23 · 无线网络与性能排障</p>
   </div>
@@ -8421,7 +8421,7 @@ round-trip min/avg/max/stddev = 8.9/9.1/9.3/0.3 ms           ← 延迟 + 抖动
 
     <div class="callout tip">
       <span class="label">和课时 20 速查表的关系</span>
-      <p>课时 20 那张表管<strong>局域网内部</strong>的故障（VLAN / 路由 / NAT 配置类，工具以 <code>show</code> 命令和 Simulation 模式为主）；本表管<strong>接入侧</strong>的故障（上不了网、网慢，工具以终端命令为主）。两张表合起来，就是你的第一版排障手册。防火墙主动阻断的场景涉及安全策略，阶段 7 课时 26 系统学完后再并入。</p>
+      <p>课时 20 那张表管<strong>局域网内部</strong>的故障（VLAN / 路由 / NAT 配置类，工具以 <code>show</code> 命令和 Simulation 模式为主）；本表管<strong>接入侧</strong>的故障（上不了网、网慢，工具以终端命令为主）。两张表合起来，就是你的第一版排障手册。防火墙主动阻断的场景涉及安全策略，阶段 8 课时 26 系统学完后再并入。</p>
     </div>
   </div>
 
@@ -8519,7 +8519,7 @@ round-trip min/avg/max/stddev = 8.9/9.1/9.3/0.3 ms           ← 延迟 + 抖动
 <!-- ==================== 课时 24（lesson-23）==================== -->
 <div class="lesson-page" id="lesson-23">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 7 · 课时 24 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 8 · 课时 24 / 30 · 核心必修</span>
     <h1>密码学基础<br>别人看不到，改不了，赖不掉</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 24 · 网络安全实战</p>
   </div>
@@ -9091,7 +9091,7 @@ openssl x509 -in cert.pem -text</pre>
 <!-- ==================== 课时 25（lesson-24）==================== -->
 <div class="lesson-page" id="lesson-24">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 7 · 课时 25 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 8 · 课时 25 / 30 · 核心必修</span>
     <h1>TLS 协议<br>HTTPS 到底安全在哪里</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 25 · 网络安全实战</p>
   </div>
@@ -9423,7 +9423,7 @@ server.serve_forever()</pre>
 <!-- ==================== 课时 26（lesson-25）==================== -->
 <div class="lesson-page" id="lesson-25">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 7 · 课时 26 / 30 · 核心必修 + 认知性介绍</span>
+    <span class="lesson-tag">阶段 8 · 课时 26 / 30 · 核心必修 + 认知性介绍</span>
     <h1>主机防火墙与授权扫描<br>把门守住，把自己摸清</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 26 · 网络安全实战</p>
   </div>
@@ -9535,7 +9535,7 @@ server.serve_forever()</pre>
 
     <div class="callout tip">
       <span class="label">回连课时 23：DROP 和 REJECT 的排障含义</span>
-      <p>课时 23 的排障表留了"防火墙主动阻断的场景阶段 7 再并入"——现在补上：<strong>connection refused</strong>（快速失败）= 端口没开或 REJECT 回了明确拒绝；<strong>连接超时</strong>（干等无响应）= 包被 DROP 静默吞掉。下次排查"连不上"，这个二分能立刻告诉你：对面是"拒绝了你"还是"没收到/不理你"。</p>
+      <p>课时 23 的排障表留了"防火墙主动阻断的场景阶段 8 再并入"——现在补上：<strong>connection refused</strong>（快速失败）= 端口没开或 REJECT 回了明确拒绝；<strong>连接超时</strong>（干等无响应）= 包被 DROP 静默吞掉。下次排查"连不上"，这个二分能立刻告诉你：对面是"拒绝了你"还是"没收到/不理你"。</p>
     </div>
   </div>
 
@@ -9753,7 +9753,7 @@ nmap -sT -sV 127.0.0.1 -oN myscan.txt</pre>
 <!-- ==================== 课时 27（lesson-26）==================== -->
 <div class="lesson-page" id="lesson-26">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 7 · 课时 27 / 30 · 认知性介绍</span>
+    <span class="lesson-tag">阶段 8 · 课时 27 / 30 · 认知性介绍</span>
     <h1>安全架构概览<br>企业网络的安全是什么形状</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 27 · 网络安全实战</p>
   </div>
@@ -9971,7 +9971,7 @@ nmap -sT -sV 127.0.0.1 -oN myscan.txt</pre>
     <h2 class="section-title"><span class="num">07</span> 掌握验证标准</h2>
 
     <div class="checklist">
-      <h3>完成以下 4 项验证后，进入阶段 8 综合项目</h3>
+      <h3>完成以下 4 项验证后，进入阶段 9 综合项目</h3>
       <div class="check-item"><div class="box"></div><span>能说出 DMZ 的作用（对外服务的缓冲区）和三域划分的基本逻辑，解释"DMZ → 内网默认禁止"的原因</span></div>
       <div class="check-item"><div class="box"></div><span>能区分 IPSec VPN 和 SSL VPN 的概念（工作层、典型场景、客户端形态）</span></div>
       <div class="check-item"><div class="box"></div><span>能画出企业安全架构概念图并标注各组件职责，说出"串联 vs 旁路"部署的差异</span></div>
@@ -10012,7 +10012,7 @@ nmap -sT -sV 127.0.0.1 -oN myscan.txt</pre>
 <!-- ==================== 课时 28（lesson-27）==================== -->
 <div class="lesson-page" id="lesson-27">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 8 · 课时 28 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 9 · 课时 28 / 30 · 核心必修</span>
     <h1>安全网络架构<br>把三十课装进一张企业网</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 28 · 综合项目与考核</p>
   </div>
@@ -10704,7 +10704,7 @@ nmap -sT -p 22,80,443,8080 192.168.56.10 -oN dmz-scan.txt    <span class="com">#
 <!-- ==================== 课时 29（lesson-28）==================== -->
 <div class="lesson-page" id="lesson-28">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 8 · 课时 29 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 9 · 课时 29 / 30 · 核心必修</span>
     <h1>故障定位实战考试<br>限时排查，把根因揪出来</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 29 · 综合项目与考核</p>
   </div>
@@ -10718,7 +10718,7 @@ nmap -sT -p 22,80,443,8080 192.168.56.10 -oN dmz-scan.txt    <span class="com">#
   <div class="section">
     <h2 class="section-title"><span class="num">01</span> 考试说明与规则：毕业设计变考场</h2>
 
-    <p>这是阶段 8 的第二站，也是整门课的"路考"。考卷不是新题目，就是<strong>课时 28 交付的项目拓扑本身</strong>——Packet Tracer 的 .pkt 文件加上 Linux VM。这是刻意设计：真实世界的故障，从来都发生在你以为熟悉的网络上。</p>
+    <p>这是阶段 9 的第二站，也是整门课的"路考"。考卷不是新题目，就是<strong>课时 28 交付的项目拓扑本身</strong>——Packet Tracer 的 .pkt 文件加上 Linux VM。这是刻意设计：真实世界的故障，从来都发生在你以为熟悉的网络上。</p>
 
     <table class="compare-table">
       <tr>
@@ -11238,7 +11238,7 @@ L3SW# show ip route                                   <span class="com">← 核�
 <!-- ==================== 课时 30（lesson-29）==================== -->
 <div class="lesson-page" id="lesson-29">
   <div class="lesson-header">
-    <span class="lesson-tag">阶段 8 · 课时 30 / 30 · 核心必修</span>
+    <span class="lesson-tag">阶段 9 · 课时 30 / 30 · 核心必修</span>
     <h1>口述答辩：把三十课讲成一条线<br>课程复盘：看清你走了多远</h1>
     <p class="subtitle">计算机网络实战私教课 | 课时 30 · 综合项目与考核</p>
   </div>
@@ -11526,18 +11526,18 @@ L3SW# show ip route                                   <span class="com">← 核�
         <th class="col-h">代表实战</th>
         <th class="col-h">一句话收获</th>
       </tr>
-      <tr><td><strong>阶段 0 · 学习诊断与环境准备</strong>（01）</td><td>前测基线、实验安全七条红线、工具链</td><td>安装并验证 Wireshark / Python / Packet Tracer</td><td>＿＿＿＿＿</td></tr>
-      <tr><td><strong>阶段 1 · 网络全景与工具入门</strong>（02-03）</td><td>分层思想、TCP/IP 四层模型、封装与两类地址</td><td>抓 HTTP 包并逐层展开</td><td>＿＿＿＿＿</td></tr>
-      <tr><td><strong>阶段 2 · 应用层实战</strong>（04-07）</td><td>HTTP 报文与状态码、HTTPS、DNS 解析链、DHCP</td><td>抓包分析 HTTP 与 DNS 报文</td><td>＿＿＿＿＿</td></tr>
-      <tr><td><strong>阶段 3 · 传输层与 Socket 编程</strong>（08-11）</td><td>三次握手与四次挥手、可靠传输、流控与拥塞、Socket</td><td>从 Echo 服务器到聊天室</td><td>＿＿＿＿＿</td></tr>
-      <tr><td><strong>阶段 4 · 网络层与路由</strong>（12-16）</td><td>IP 与 TTL、子网划分/CIDR、路由、NAT 与 ICMP</td><td>Packet Tracer 企业网络仿真</td><td>＿＿＿＿＿</td></tr>
-      <tr><td><strong>阶段 5 · 链路层与局域网</strong>（17-20）</td><td>以太网帧、ARP、交换机与 VLAN、Trunk</td><td>局域网综合抓包</td><td>＿＿＿＿＿</td></tr>
-      <tr><td><strong>阶段 6 · 无线网络与性能排障</strong>（21-23）</td><td>802.11、WPA2/WPA3、时延吞吐抖动、分层排障</td><td>无线组网仿真、分层 ping 排障</td><td>＿＿＿＿＿</td></tr>
-      <tr><td><strong>阶段 7 · 网络安全实战</strong>（24-27）</td><td>密码学六件武器、TLS 握手与前向保密、iptables、安全架构</td><td>自签证书起 HTTPS 服务器、iptables 规则</td><td>＿＿＿＿＿</td></tr>
-      <tr><td><strong>阶段 8 · 综合项目与考核</strong>（28-30）</td><td>DMZ 与纵深防御、故障定位方法论、系统化表达</td><td>安全网络架构项目、故障定位考试</td><td>＿＿＿＿＿</td></tr>
+      <tr><td><strong>阶段 1 · 学习诊断与环境准备</strong>（01）</td><td>前测基线、实验安全七条红线、工具链</td><td>安装并验证 Wireshark / Python / Packet Tracer</td><td>＿＿＿＿＿</td></tr>
+      <tr><td><strong>阶段 2 · 网络全景与工具入门</strong>（02-03）</td><td>分层思想、TCP/IP 四层模型、封装与两类地址</td><td>抓 HTTP 包并逐层展开</td><td>＿＿＿＿＿</td></tr>
+      <tr><td><strong>阶段 3 · 应用层实战</strong>（04-07）</td><td>HTTP 报文与状态码、HTTPS、DNS 解析链、DHCP</td><td>抓包分析 HTTP 与 DNS 报文</td><td>＿＿＿＿＿</td></tr>
+      <tr><td><strong>阶段 4 · 传输层与 Socket 编程</strong>（08-11）</td><td>三次握手与四次挥手、可靠传输、流控与拥塞、Socket</td><td>从 Echo 服务器到聊天室</td><td>＿＿＿＿＿</td></tr>
+      <tr><td><strong>阶段 5 · 网络层与路由</strong>（12-16）</td><td>IP 与 TTL、子网划分/CIDR、路由、NAT 与 ICMP</td><td>Packet Tracer 企业网络仿真</td><td>＿＿＿＿＿</td></tr>
+      <tr><td><strong>阶段 6 · 链路层与局域网</strong>（17-20）</td><td>以太网帧、ARP、交换机与 VLAN、Trunk</td><td>局域网综合抓包</td><td>＿＿＿＿＿</td></tr>
+      <tr><td><strong>阶段 7 · 无线网络与性能排障</strong>（21-23）</td><td>802.11、WPA2/WPA3、时延吞吐抖动、分层排障</td><td>无线组网仿真、分层 ping 排障</td><td>＿＿＿＿＿</td></tr>
+      <tr><td><strong>阶段 8 · 网络安全实战</strong>（24-27）</td><td>密码学六件武器、TLS 握手与前向保密、iptables、安全架构</td><td>自签证书起 HTTPS 服务器、iptables 规则</td><td>＿＿＿＿＿</td></tr>
+      <tr><td><strong>阶段 9 · 综合项目与考核</strong>（28-30）</td><td>DMZ 与纵深防御、故障定位方法论、系统化表达</td><td>安全网络架构项目、故障定位考试</td><td>＿＿＿＿＿</td></tr>
     </table>
 
-    <p>顺带一提：九个阶段和答辩五题不是一一对应，而是互相咬合——题目一横穿全部阶段，题目二踩阶段 3，题目三踩阶段 4，题目四踩阶段 5，题目五踩阶段 7。哪个阶段自评低，哪道题的录音多半就薄，两份材料正好互相对账。</p>
+    <p>顺带一提：九个阶段和答辩五题不是一一对应，而是互相咬合——题目一横穿全部阶段，题目二踩阶段 4，题目三踩阶段 5，题目四踩阶段 6，题目五踩阶段 8。哪个阶段自评低，哪道题的录音多半就薄，两份材料正好互相对账。</p>
   </div>
 
   <!-- ==================== Section 5 ==================== -->
@@ -11577,15 +11577,15 @@ L3SW# show ip route                                   <span class="com">← 核�
         <th class="col-h">能动手实现</th>
         <th class="col-h">能独立排障</th>
       </tr>
-      <tr><td><strong>阶段 0</strong> · 诊断与准备</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
-      <tr><td><strong>阶段 1</strong> · 全景与工具</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
-      <tr><td><strong>阶段 2</strong> · 应用层</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
-      <tr><td><strong>阶段 3</strong> · 传输层与 Socket</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
-      <tr><td><strong>阶段 4</strong> · 网络层与路由</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
-      <tr><td><strong>阶段 5</strong> · 链路层与局域网</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
-      <tr><td><strong>阶段 6</strong> · 无线与性能</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
-      <tr><td><strong>阶段 7</strong> · 网络安全</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
-      <tr><td><strong>阶段 8</strong> · 综合与考核</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
+      <tr><td><strong>阶段 1</strong> · 诊断与准备</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
+      <tr><td><strong>阶段 2</strong> · 全景与工具</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
+      <tr><td><strong>阶段 3</strong> · 应用层</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
+      <tr><td><strong>阶段 4</strong> · 传输层与 Socket</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
+      <tr><td><strong>阶段 5</strong> · 网络层与路由</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
+      <tr><td><strong>阶段 6</strong> · 链路层与局域网</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
+      <tr><td><strong>阶段 7</strong> · 无线与性能</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
+      <tr><td><strong>阶段 8</strong> · 网络安全</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
+      <tr><td><strong>阶段 9</strong> · 综合与考核</td><td>○</td><td>○</td><td>○</td><td>○</td></tr>
     </table>
 
     <p>在每一行你达到的最高一档画勾。任何一行没勾到"能解释原理"，对应课时就进下面的薄弱点清单——自评低不是坏事，它是下一阶段的地图。</p>
